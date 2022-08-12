@@ -15,6 +15,11 @@ const counterSlice = createSlice({
       state.showCounter = !state.showCounter;
     },
   },
+  extraReducers: {
+    [logout]: (state, action) => {
+      state.counter = 0;
+    },
+  },
 });
 export default counterSlice.reducer;
 export const { increase, decrease } = counterSlice.actions;
